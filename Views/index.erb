@@ -1,22 +1,11 @@
-<h3>How will you spend your Saturday Night?.</h3>
+<h3>How will you spend your Saturday Night?</h3>
 <br>
 <br>
 <h2> <%= @story %> </h2>
 <h2> <%= @question %> </h2>
-<form method='POST' action="/first" >
-	<label for=<%= @choice1 %> >
-		<input type= 'radio' name='choice' value =<%= @choice1 %> > <%= @choice1.capitalize %>
-	</label><br>
-	<label for=<%= @choice2 %> >
-		<input type= 'radio' name='choice' value =<%= @choice2 %> > <%= @choice2.capitalize %>
-	</label><br>
-	<label for=<%= @choice3 %> >
-		<input type= 'radio' name='choice' value =<%= @choice3 %> > <%= @choice3.capitalize %>
-	</label><br>
-	<input type='submit'>
-</form>
 
-<a href=<% "/direction/" + @choice1 %>> <%= @choice1 %> </a>
-<a href=<% "/direction/" + @choice2 %>> <%= @choice2 %> </a>
-<a href=<% "/direction/" + @choice3 %>> <%= @choice3 %> </a>
+
+<a href=<%= "/direction/" + @direct1 %>> <%= @choice1 %> </a>
+<a href=<%= "/direction/" + @direct2 %>> <%= @choice2 %> </a>
+<a href=<%= "/direction/" + @direct3 %>> <%= @choice3 %> </a>
 

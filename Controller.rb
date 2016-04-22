@@ -10,21 +10,15 @@ get '/first' do
 	@question = "Do you slide through with the homies?"
 	@choice1 = "Nah. I\'m soft."
 	@choice2 = "HUNDO"
+	@direct1 = "stayingin"
+	@direct2 = "HUNDO"
 	erb :index_2_choices
 end
-get '/stayingin' do
-	@story = "Well, looks like your night is over."
-end
-
-get 'direction/:choice' do
-	case params[:choice]
-	when "Yes"
-		
-	when "Nah. I\'m soft." 
+get '/direction/:direct' do
+	case params[:direct]
+	when "stayingin" 
 	@story = "Well, looks like your night is over."
 	erb :ending
-	when "iron"
-	#something
 	end	
 
 end
