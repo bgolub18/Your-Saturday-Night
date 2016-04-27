@@ -38,6 +38,35 @@ get '/direction/:direct' do
 		@direct3 = "callamb"
 		erb :index 
 	when "walk"
-
+		@story = "You safely walk to the club and have a flame night."
+		erb :ending
+	when "callcops"
+		@story = "The Uber driver catches you calling the 5-O. He tries to attack you."
+		@question = "Do you..."
+		@choice1 = "pull out a knife and fend for your life?"
+		@choice2 = "try to negotiate?"
+		@choice3 = "Book it to the club."
+		@direct1 = "knife"
+		@direct2 = "negotiate"
+		@direct3 = "run"
+		erb :index
+	when "callamb"
+		@story = "The Uber driver catches you calling an ambulance, but he thinks you\'re calling the cops and tries to attack you."
+		@question = "Do you..."
+		@choice1 = "pull out a knife and fend for your life?"
+		@choice2 = "try to explain yourself?"
+		@choice3 = "Book it to the club."
+		@direct1 = "knife"
+		@direct2 = "explain"
+		@direct3 = "run"
+		erb :index
+	when "knife"
+		@story = "Who brings a knife to the club? The police show up and the driver blames you for his wound and pulling a knife. You get arrested and have the worst night of your life."
+		erb :ending
+	when "negotiate"
+		@story = "The Uber driver immediately responds \'I don\'t negotiate with customers.\' He stabs you. You start bleeding out. The police come and save you. You don\'t make it to the club, but at least you're alive."
+		erb :ending
+	when "run"
+	when "explain"	
 end
 
