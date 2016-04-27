@@ -68,5 +68,7 @@ get '/direction/:direct' do
 		erb :ending
 	when "run"
 	when "explain"	
+	
+	end
 end
 
