@@ -67,8 +67,25 @@ get '/direction/:direct' do
 		@story = "The Uber driver immediately responds \'I don\'t negotiate with customers.\' He stabs you. You start bleeding out. The police come and save you. You don\'t make it to the club, but at least you're alive."
 		erb :ending
 	when "run"
+		@story = "You take off. You feel like you are flying, but then you trip and fall. You clearly broke your ankle."
+		@question = "Do you still go to the club?"
+		@choice1 = "Hell yeah, anything for the buzz. I\'m walking."
+		@choice2 = "Why not? I\'ll call a new uber, and hopefully the driver will be normal."
+		@choice3 = "No way. The homies can wait. I need to get to the hospital ASAP."
+		@direct1 = "injuredwalk"
+		@direct2 = "freshuber"
+		@direct3 = "injured"
+		erb :index 
 	when "explain"	
-	
+		@story = "You tell the driver it was an ambulance. He understands. The ambulance shows up and takes the driver. You then realize you actually have a broken leg, but it\'s too late because the ambulance already left."
+		@question = "Do you slide to the club anyways?"
+		@choice1 = "Hell yeah, anything for the buzz. I\'m walking."
+		@choice2 = "Why not? I\'ll call a new uber, and hopefully the driver will be normal."
+		@choice3 = "No way. The homies can wait. I need to get to the hospital ASAP. I\'m calling another ambulance."
+		@direct1 = "injuredwalk"
+		@direct2 = "freshuber"
+		@direct3 = "injured"
+		erb :index
 	end
 end
 
