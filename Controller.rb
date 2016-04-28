@@ -5,14 +5,15 @@ get '/' do
 	@choice2 = "No"
 	erb :intro
 end
+
+
+@directs = [["nah", "stayigin"], ["hundo", "hundo"]]
+
 get '/first' do
 	@story = "It\'s Saturday night. You get a text from your friend inviting you to the hottest club in Compton."
 	@question = "Do you slide through with the homies?"
-	@choice1 = "Nah. I\'m soft."
-	@choice2 = "HUNDO"
-	@direct1 = "stayingin"
-	@direct2 = "HUNDO"
-	erb :index_2_choices
+	@directs = [["stayingin", "Nah. I\'m soft."], ["HUNDO", "HUNDO"]]
+	erb :index
 end
 get '/direction/:direct' do
 	case params[:direct]
@@ -22,20 +23,12 @@ get '/direction/:direct' do
 	when "HUNDO"
 		@story = "You call an Uber. The driver only has two stars. "
 		@question = "Do you take the Uber or walk?"
-		@choice1 = "Walk"
-		@choice2 = "Nah, I wanna meet this guy."
-		@direct1 = "walk"
-		@direct2 = "meetuber"
-		erb :index_2_choices
+		@directs = [["walk", "Walk"], ["meetuber", "Nah, I wanna meet this guy."]]
+		erb :index
 	when "meetuber"
 		@story = "The Uber driver is 12 minutes late. He tries to fight you, he's clealy under the influence of something. You stay in the cab. He crashes."
 		@question = "What do you do next?"
-		@choice1 = "You walk to the club."
-		@choice2 = "You call the cops. This guy is sketchy and you don\'t feel safe."
-		@choice3 = "You call an ambulance. The driver is bleeding from his leg and needs help."
-		@direct1 = "walk"
-		@direct2 = "callcops"
-		@direct3 = "callamb"
+		@directs = [["walk", "You walk to the club."], ["callcops", "You call the cops. This guy is sketchy and you don\'t feel safe."], ["callamb", "You call an ambulance. The driver is bleeding from his leg and needs help."]]
 		erb :index 
 	when "walk"
 		@story = "You safely walk to the club and have a flame night."
@@ -49,6 +42,7 @@ get '/direction/:direct' do
 		@direct1 = "knife"
 		@direct2 = "negotiate"
 		@direct3 = "run"
+		@directs = [["knife", "pull out a knife and fend for your life?"], ["negotiate", "try to negotiate?"], []]
 		erb :index
 	when "callamb"
 		@story = "The Uber driver catches you calling an ambulance, but he thinks you\'re calling the cops and tries to attack you."
